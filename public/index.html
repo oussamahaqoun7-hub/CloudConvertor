@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محول الصور الاحترافي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 محول الصور الاحترافي</h1>
+            <p>حول صورك بجودة عالية وسرعة فائقة</p>
+        </header>
+
+        <div class="converter-card">
+            <div class="upload-section" id="uploadSection">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📸</div>
+                    <h3>اسحب الصورة هنا أو انقر للاختيار</h3>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <p class="hint">الصيغ المدعومة: JPG, PNG, WebP, GIF</p>
+                </div>
+            </div>
+
+            <div class="file-info-section" id="fileInfoSection" style="display: none;">
+                <div class="file-preview">
+                    <img id="imagePreview" src="" alt="معاينة">
+                </div>
+                <div class="file-details">
+                    <h3>📄 معلومات الصورة</h3>
+                    <p id="fileName"></p>
+                    <p id="fileSize"></p>
+                    <button class="btn-secondary" id="changeFileBtn">تغيير الصورة</button>
+                </div>
+            </div>
+
+            <div class="conversion-section" id="conversionSection" style="display: none;">
+                <h3>⚙️ خيارات التحويل</h3>
+                
+                <div class="option-group">
+                    <label>الصيغة المطلوبة:</label>
+                    <div class="format-buttons">
+                        <button class="format-btn" data-format="jpg">JPG</button>
+                        <button class="format-btn" data-format="png">PNG</button>
+                        <button class="format-btn" data-format="webp">WebP</button>
+                        <button class="format-btn" data-format="gif">GIF</button>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <label for="qualitySlider">الجودة: <span id="qualityValue">90</span>%</label>
+                    <input type="range" id="qualitySlider" min="1" max="100" value="90">
+                </div>
+
+                <div class="option-group">
+                    <label>
+                        <input type="checkbox" id="resizeCheck">
+                        تغيير الحجم
+                    </label>
+                    <div class="resize-options" id="resizeOptions" style="display: none;">
+                        <div class="input-row">
+                            <input type="number" id="widthInput" placeholder="العرض">
+                            <span>×</span>
+                            <input type="number" id="heightInput" placeholder="الارتفاع">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-primary" id="convertBtn">🚀 ابدأ التحويل</button>
+            </div>
+
+            <div class="progress-section" id="progressSection" style="display: none;">
+                <div class="spinner"></div>
+                <p class="progress-text">جاري التحويل...</p>
+            </div>
+
+            <div class="download-section" id="downloadSection" style="display: none;">
+                <div class="success-icon">✅</div>
+                <h3>تم التحويل بنجاح!</h3>
+                <button class="btn-download" id="downloadBtn">⬇️ تحميل الصورة</button>
+                <button class="btn-secondary" id="convertAnotherBtn">🔄 تحويل صورة أخرى</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
